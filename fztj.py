@@ -43,7 +43,7 @@ class SailRoom(db.Model):
 
 # with app.app_context():
 #     db.create_all()
-
+#shuomign
 cookies = {
     'SECKEY_ABVK': 'vzULQcz14GsPelFDE1y2DYOWY0E4jeAsAFWawpXQ1jU%3D',
     'BMAP_SECKEY': '3eh45l3qdxgTdUMGSpxI3uD-QPDWWRGfqcVFvG7l31yEC21ONzIYKmCnl8pFxP8xPiDVT5tS7q9oI_2p38rbg0fK_ThS7DjIDDP9yRqT3vct3ea6lRWzyz-b26LweE_Zgh_rUXhR_TgWAuViiSZPZdKxjar_1KRaJa6X4zXb22yZG8mmSiV3PRFwBxiBTL1q',
