@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Plotly Chart</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="plot">{{ plot|safe }}</div>
+    <script>
+        var plot = document.getElementById('plot');
+
+        // Define a function to update the plot data
+        function updatePlot() {
+            // Make a WebSocket request to /dynamic-data
+            var ws = new WebSocket("ws://" + document.location.host + "/dynamic-data");
+            ws.onmessage = function(event) {
+                var data = JSON.parse(event.data);
+
+                // Update the plot data
+                Plotly.react(plot, data.data, data.layout);
+            };
+        }
+
+        // Start the update loop
+        setInterval(updatePlot, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jinja2控制语句</title>
+</head>
+<body>
+{% if age > 18 %}
+    <div>您已经18岁，可以进入网吧</div>
+{% elif age == 18 %}
+    <div>您刚满18，适当进入网吧</div>
+{% elif age < 18 %}
+    <div>您不满18不能就进入网吧</div>
+{% endif %}
+
+{% for book in books %}
+    <div>图书名称：{{ book.name }}, 图书作者：{{ book.author }}</div>
+{% endfor %}
+</body>
+</html>

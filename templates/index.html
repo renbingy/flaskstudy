@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Plotly Chart</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="plot"></div>
+    <script>
+        var plot = document.getElementById('plot');
+
+        // Define the initial data trace
+        var trace = {
+            x: [],
+            y: [],
+            mode: 'lines',
+            line: {color: '#80CAF6'},
+            name: 'Dynamic Data'
+        };
+
+        // Define the initial layout
+        var layout = {
+            title: 'Dynamic Line Plot',
+            xaxis: {title: 'Time'},
+            yaxis: {title: 'Value'},
+            margin: {t: 40}
+        };
+
+        // Create the plot figure
+        var fig = {data: [trace], layout: layout};
+        Plotly.newPlot(plot, fig);
+
+        // Define a function to update the plot data
+        function updatePlot() {
+            // Generate new data
+            var y = Math.random();
+
+            // Append the new data to the existing trace
+            var update = {y: [[y]]};
+            Plotly.update(plot, update, {}, 0);
+
+            // Schedule the next update in 1 second
+            setTimeout(updatePlot, 1000);
+        }
+
+        // Start the update loop
+        updatePlot();
+    </script>
+</body>
+</html>
