@@ -32,7 +32,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{USER}:{PASSWORD}@{HOS
 db = SQLAlchemy()
 db.init_app(app)
 
-#创建表
+#创建表02
 class SailRoom(db.Model):
     __tablename__ = 'sailed_room'
     id = db.Column(db.Integer,primary_key = True,autoincrement = True)
